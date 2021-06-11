@@ -7,7 +7,7 @@ def test_north_to_west():
 
     rover = Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
 
-    rover.rotate('l')
+    rover.rotate(rotation_direction='l')
     final_direction = rover.get_direction()
 
     assert final_direction == 'W'
@@ -20,7 +20,7 @@ def test_north_to_east():
 
     rover = Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
 
-    rover.rotate('r')
+    rover.rotate(rotation_direction='r')
     final_direction = rover.get_direction()
 
     assert final_direction == 'E'
@@ -32,7 +32,7 @@ def test_east_to_north():
 
     rover = Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
 
-    rover.rotate('l')
+    rover.rotate(rotation_direction='l')
     final_direction = rover.get_direction()
 
     assert final_direction == 'N'
@@ -44,7 +44,7 @@ def test_east_to_south():
 
     rover = Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
 
-    rover.rotate('r')
+    rover.rotate(rotation_direction='r')
     final_direction = rover.get_direction()
 
     assert final_direction == 'S'
@@ -56,7 +56,7 @@ def test_south_to_east():
 
     rover = Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
 
-    rover.rotate('l')
+    rover.rotate(rotation_direction='l')
     final_direction = rover.get_direction()
 
     assert final_direction == 'E'
@@ -68,7 +68,7 @@ def test_south_to_west():
 
     rover = Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
 
-    rover.rotate('r')
+    rover.rotate(rotation_direction='r')
     final_direction = rover.get_direction()
 
     assert final_direction == 'W'
@@ -80,7 +80,7 @@ def test_west_to_south():
 
     rover = Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
 
-    rover.rotate('l')
+    rover.rotate(rotation_direction='l')
     final_direction = rover.get_direction()
 
     assert final_direction == 'S'
@@ -92,7 +92,7 @@ def test_west_to_north():
 
     rover = Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
 
-    rover.rotate('r')
+    rover.rotate(rotation_direction='r')
     final_direction = rover.get_direction()
 
     assert final_direction == 'N'

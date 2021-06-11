@@ -7,7 +7,7 @@ def test_move_up():
 
     rover = Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
 
-    rover.move(direction='f')
+    rover.move(movement_direction='f')
     final_position_y, final_position_x = rover.get_position()
 
     assert (final_position_y, final_position_x) == (1, 0)
@@ -19,7 +19,7 @@ def test_move_down():
 
     rover = Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
 
-    rover.move(direction='b')
+    rover.move(movement_direction='b')
     final_position_y, final_position_x = rover.get_position()
 
     assert (final_position_y, final_position_x) == (-1, 0)
