@@ -95,3 +95,12 @@ def test_west_move_backward():
     final_position_y, final_position_x = rover.get_position()
 
     assert (final_position_y, final_position_x) == (0, 1)
+
+
+def test_wrong_movement():
+    initial_y, initial_x = 0, 0
+    initial_direction = 'W'
+
+    rover = Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
+
+    rover.move(movement_direction='n')
