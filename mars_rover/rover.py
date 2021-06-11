@@ -10,5 +10,11 @@ class Rover:
     def get_direction(self):
         return self.direction
 
+    def get_position(self):
+        return self.y, self.x
+
+    def move(self, direction):
+        self.y = 1
+
     def rotate(self, rotation_direction):
         self.direction = st.ROTATIONS[self.direction][rotation_direction]
