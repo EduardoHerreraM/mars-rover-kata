@@ -1,3 +1,6 @@
+import pytest
+
+from mars_rover import exceptions
 from mars_rover.rover import Rover
 
 
@@ -103,4 +106,5 @@ def test_wrong_movement():
 
     rover = Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
 
-    rover.move(movement_direction='n')
+    with pytest.raises(expected_exception=exceptions.MovementNotContemplatedException):
+        rover.move(movement_direction='n')
