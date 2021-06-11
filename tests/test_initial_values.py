@@ -9,7 +9,7 @@ def test_coordinates_not_integers_y():
     initial_direction = 'N'
 
     with pytest.raises(TypeError):
-        rover = Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
+        Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
 
 
 def test_coordinates_not_integers_x():
@@ -17,7 +17,15 @@ def test_coordinates_not_integers_x():
     initial_direction = 'N'
 
     with pytest.raises(TypeError):
-        rover = Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
+        Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
+
+
+def test_direction_not_string():
+    initial_y, initial_x = 0, 0
+    initial_direction = 4
+
+    with pytest.raises(TypeError):
+        Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
 
 
 def test_direction_not_contemplated():
@@ -25,4 +33,4 @@ def test_direction_not_contemplated():
     initial_direction = 'H'
 
     with pytest.raises(exceptions.DirectionNotContemplatedError):
-        rover = Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
+        Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)

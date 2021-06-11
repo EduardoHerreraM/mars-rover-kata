@@ -5,7 +5,7 @@ from mars_rover import settings as st
 
 class Rover:
     def __init__(self, initial_y, initial_x, initial_direction):
-        if type(initial_y) is not int or type(initial_x) is not int:
+        if type(initial_y) is not int or type(initial_x) is not int or type(initial_direction) is not str:
             raise TypeError
         if initial_direction not in st.VALID_DIRECTIONS:
             raise DirectionNotContemplatedError(direction=initial_direction)
