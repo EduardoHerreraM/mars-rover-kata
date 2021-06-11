@@ -1,3 +1,4 @@
+from mars_rover.exceptions import MovementNotContemplatedException
 from mars_rover import settings as st
 
 
@@ -14,6 +15,8 @@ class Rover:
         return self.y, self.x
 
     def move(self, movement_direction):
+        if movement_direction not in st.VALID_MOVEMENT_ORDERS:
+            raise MovementNotContemplatedException(movement_direction=movement_direction)
         self.x += st.MOVEMENTS[self.facing_direction][movement_direction]['x'] * st.DISTANCE_EACH_MOVEMENT
         self.y += st.MOVEMENTS[self.facing_direction][movement_direction]['y'] * st.DISTANCE_EACH_MOVEMENT
 
