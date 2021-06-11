@@ -17,5 +17,12 @@ class Rover:
         self.x += st.MOVEMENTS[self.facing_direction][movement_direction]['x'] * st.DISTANCE_EACH_MOVEMENT
         self.y += st.MOVEMENTS[self.facing_direction][movement_direction]['y'] * st.DISTANCE_EACH_MOVEMENT
 
+    def parse_orders(self, orders):
+        for order in orders:
+            if order in st.VALID_MOVEMENT_ORDERS:
+                self.move(movement_direction=order)
+            elif order in st.VALID_ROTATION_ORDERS:
+                self.rotate(rotation_direction=order)
+
     def rotate(self, rotation_direction):
         self.facing_direction = st.ROTATIONS[self.facing_direction][rotation_direction]
