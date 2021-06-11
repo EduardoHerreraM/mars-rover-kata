@@ -14,7 +14,8 @@ class Rover:
         return self.y, self.x
 
     def move(self, direction):
-        self.y = 1
+        self.x += st.MOVEMENTS[self.direction][direction]['x'] * st.DISTANCE_EACH_MOVEMENT
+        self.y += st.MOVEMENTS[self.direction][direction]['y'] * st.DISTANCE_EACH_MOVEMENT
 
     def rotate(self, rotation_direction):
         self.direction = st.ROTATIONS[self.direction][rotation_direction]
