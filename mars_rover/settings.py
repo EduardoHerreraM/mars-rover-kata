@@ -62,5 +62,6 @@ ROTATIONS = {
     }
 }
 
+VALID_DIRECTIONS = ['N', 'E', 'S', 'W']
 VALID_MOVEMENT_ORDERS = ['f', 'b']
 VALID_ROTATION_ORDERS = ['l', 'r']

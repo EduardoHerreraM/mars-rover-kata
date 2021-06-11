@@ -1,3 +1,11 @@
+class DirectionNotContemplatedError(Exception):
+    def __init__(self, direction):
+        self.direction = direction
+
+    def __str__(self):
+        return f"'{self.direction}' direction not contemplated"
+
+
 class MovementNotContemplatedException(Exception):
     def __init__(self, movement_direction):
         self.movement_direction = movement_direction
