@@ -1,3 +1,6 @@
+from mars_rover import settings as st
+
+
 class Rover:
     def __init__(self, initial_y, initial_x, initial_direction):
         self.y = initial_y
@@ -8,4 +11,4 @@ class Rover:
         return self.direction
 
     def rotate(self, rotation_direction):
-        self.direction = 'E'
+        self.direction = st.ROTATIONS[self.direction][rotation_direction]
