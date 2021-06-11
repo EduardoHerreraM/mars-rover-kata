@@ -1,3 +1,6 @@
+import pytest
+
+from mars_rover import exceptions
 from mars_rover.rover import Rover
 
 
@@ -96,3 +99,13 @@ def test_west_to_north():
     final_direction = rover.get_direction()
 
     assert final_direction == 'N'
+
+
+def test_wrong_rotation():
+    initial_y, initial_x = 0, 0
+    initial_direction = 'W'
+
+    rover = Rover(initial_y=initial_y, initial_x=initial_x, initial_direction=initial_direction)
+
+    with pytest.raises(expected_exception=exceptions.RotationNotContemplatedException):
+        rover.rotate(rotation_direction='z')

@@ -1,4 +1,5 @@
-from mars_rover.exceptions import MovementNotContemplatedException
+from mars_rover.exceptions import MovementNotContemplatedException, OrderNotContemplatedException, \
+    RotationNotContemplatedException
 from mars_rover import settings as st
 
 
@@ -26,6 +27,10 @@ class Rover:
                 self.move(movement_direction=order)
             elif order in st.VALID_ROTATION_ORDERS:
                 self.rotate(rotation_direction=order)
+            else:
+                raise OrderNotContemplatedException(order=order)
 
     def rotate(self, rotation_direction):
+        if rotation_direction not in st.VALID_ROTATION_ORDERS:
+            raise RotationNotContemplatedException(rotation_direction=rotation_direction)
         self.facing_direction = st.ROTATIONS[self.facing_direction][rotation_direction]
